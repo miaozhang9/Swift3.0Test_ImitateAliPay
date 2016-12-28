@@ -12,6 +12,7 @@ class ReputationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "口碑"
 
         // Do any additional setup after loading the view.
     }

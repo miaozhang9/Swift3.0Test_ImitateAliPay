@@ -13,6 +13,7 @@ class AliPayViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "AliPay"
         let leftItem = UIBarButtonItem(title: "账单", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showMyOrder))
         navigationItem.leftBarButtonItem = leftItem;
         // Do any additional setup after loading the view.
