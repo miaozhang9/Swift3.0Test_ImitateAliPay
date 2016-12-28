@@ -40,5 +40,10 @@
 	<string>app请求允许使用定位服务</string>
 	<key>NSContactsUsageDescription</key>
 	<string>app请求访问通讯录</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
