@@ -14,7 +14,6 @@ class FriendCell: UITableViewCell {
     var avatarIV: UIImageView!
     var userNameLabel: UILabel!
     var desLabel: UILabel!
-//    var friendModel: FriendModel!
     var friendModel: FriendModel! {
         
         didSet{
