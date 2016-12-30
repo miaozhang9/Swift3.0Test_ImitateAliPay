@@ -10,7 +10,7 @@ import UIKit
 
 let cellMIdentifier:String = "cell"
 
-class MoneyViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class MoneyViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     var collectionView:UICollectionView?
     let dataSource:NSMutableArray = NSMutableArray()
     override func viewDidLoad() {
@@ -44,26 +44,24 @@ class MoneyViewController: BaseViewController,UICollectionViewDelegate,UICollect
         defaultLayout.footerReferenceSize = CGSize(width: 0, height: 15)
         
         collectionView = UICollectionView(frame: CGRect(x:0, y:0, width:kScreenWidth, height:kScreenHeight), collectionViewLayout: defaultLayout)
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = UIColor.lightGray
         collectionView?.register(MoneyCollectionViewCell.self, forCellWithReuseIdentifier: cellMIdentifier)
 
         collectionView?.dataSource = self
         collectionView?.delegate = self
         self.view.addSubview(collectionView!)
-        
-    
-    
     }
-    
+    //分区个数
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return dataSource.count;
     }
     
-    // MARK:   numberOfItems
+    // 每个区的item个数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         let sectionArray:NSArray =  dataSource.object(at: section) as! NSArray
         return sectionArray.count;
     }
+    //显示cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
         let cell:MoneyCollectionViewCell  = collectionView.dequeueReusableCell(withReuseIdentifier: cellMIdentifier, for: indexPath as IndexPath) as! MoneyCollectionViewCell
@@ -72,13 +70,12 @@ class MoneyViewController: BaseViewController,UICollectionViewDelegate,UICollect
         cell.rowDic = rowDic
         return cell;
     }
-    
-    
+    //点击item
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         print("点击了第\(indexPath.section) 分区 ,第\(indexPath.row) 个元素")
     }
-    
+    //item的size
     private func collectionView(collectionView: UICollectionView!,
                                 layout collectionViewLayout: UICollectionViewLayout!,
                                 sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
@@ -86,13 +83,16 @@ class MoneyViewController: BaseViewController,UICollectionViewDelegate,UICollect
     }
     
     
-    
-    
     func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
         return UIEdgeInsetsMake(0, 0, 0, 0);
     }
-
-    
+    //设置HeaderView的宽高
+    //MARK: UICollectionViewDelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return CGSize(width:collectionView.frame.size.width,height:20)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -22,7 +22,7 @@ class MoneyCollectionViewCell: UICollectionViewCell {
             self.desLabel!.text = rowDic["des"] as? String
             self.layer.borderColor = UIColor.lightGray.cgColor;
             self.layer.borderWidth = 0.25;
-//            self.backgroundColor = UIColor.orange
+            self.backgroundColor = UIColor.white
         }
     
     
