@@ -14,6 +14,7 @@ class MZTabbarController: UITabBarController {
     var reputationVC = ReputationViewController()
     var friendVC = FriendViewController()
     var moneyVC = MoneyViewController()
+    var hotVC = HotViewController()
     
     func initSubViewControllers() {
         let aliNav = BaseNavgationController(rootViewController: aliPay)
@@ -32,7 +33,11 @@ class MZTabbarController: UITabBarController {
         let moneyItem = UITabBarItem.init(title: "我的", image: UIImage.init(named: "TabBar_Assets"), selectedImage: UIImage.init(named: "TabBar_Assets_Sel"))
         moneyNav.tabBarItem = moneyItem;
         
-        self.viewControllers = [aliNav,reputtationNav,friendNav,moneyNav];
+        let hotNav = BaseNavgationController(rootViewController: hotVC)
+        let hotItem = UITabBarItem.init(title: "Hot", image: UIImage.init(named: "TabBar_Assets"), selectedImage: UIImage.init(named: "TabBar_Assets_Sel"))
+        hotNav.tabBarItem = hotItem;
+        
+        self.viewControllers = [aliNav,reputtationNav,friendNav,moneyNav,hotNav];
         self.tabBar.tintColor = UIColor.red
         
     }

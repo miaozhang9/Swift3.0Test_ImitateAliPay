@@ -301,6 +301,9 @@
 		9BFE62061E138C39006C9B39 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE61F21E138C39006C9B39 /* String+MD5.swift */; };
 		9BFE62071E138C39006C9B39 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE61F31E138C39006C9B39 /* ThreadHelper.swift */; };
 		9BFE62081E138C39006C9B39 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE61F41E138C39006C9B39 /* UIButton+Kingfisher.swift */; };
+		9BFE620D1E160D6A006C9B39 /* MoneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE620C1E160D6A006C9B39 /* MoneyCollectionViewCell.swift */; };
+		9BFE620F1E1637E2006C9B39 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE620E1E1637E2006C9B39 /* HotViewController.swift */; };
+		9BFE62111E16389E006C9B39 /* HotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE62101E16389E006C9B39 /* HotCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -603,6 +606,9 @@
 		9BFE61F21E138C39006C9B39 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		9BFE61F31E138C39006C9B39 /* ThreadHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
 		9BFE61F41E138C39006C9B39 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
+		9BFE620C1E160D6A006C9B39 /* MoneyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BFE620E1E1637E2006C9B39 /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
+		9BFE62101E16389E006C9B39 /* HotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -663,6 +669,7 @@
 				9BFE5FBC1E1252DD006C9B39 /* FriendViewController.swift */,
 				9BFE5FBE1E1252ED006C9B39 /* MoneyViewController.swift */,
 				9BFE5FC01E1252FF006C9B39 /* CityListViewController.swift */,
+				9BFE620E1E1637E2006C9B39 /* HotViewController.swift */,
 				9BFE61DD1E138C39006C9B39 /* ThirdLib */,
 				9BFE61D81E1365AF006C9B39 /* Cell */,
 				9BFE61D51E135D0A006C9B39 /* Model */,
@@ -1027,6 +1034,8 @@
 			isa = PBXGroup;
 			children = (
 				9BFE61D91E1365DC006C9B39 /* FriendCell.swift */,
+				9BFE620C1E160D6A006C9B39 /* MoneyCollectionViewCell.swift */,
+				9BFE62101E16389E006C9B39 /* HotCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1469,6 +1478,7 @@
 				9BFE61FF1E138C39006C9B39 /* ImageView+Kingfisher.swift in Sources */,
 				9BFE61FE1E138C39006C9B39 /* ImageTransition.swift in Sources */,
 				9BFE5FC61E1254A0006C9B39 /* BaseNavgationController.swift in Sources */,
+				9BFE62111E16389E006C9B39 /* HotCell.swift in Sources */,
 				9BFE62011E138C39006C9B39 /* Kingfisher.swift in Sources */,
 				9BFE5FBF1E1252ED006C9B39 /* MoneyViewController.swift in Sources */,
 				9BFE61FA1E138C39006C9B39 /* ImageCache.swift in Sources */,
@@ -1479,12 +1489,14 @@
 				9BFE61F61E138C39006C9B39 /* Box.swift in Sources */,
 				9BFE61D11E126373006C9B39 /* constant.swift in Sources */,
 				9BFE5FBB1E1252BA006C9B39 /* ReputationViewController.swift in Sources */,
+				9BFE620F1E1637E2006C9B39 /* HotViewController.swift in Sources */,
 				9BFE62031E138C39006C9B39 /* KingfisherOptionsInfo.swift in Sources */,
 				9BFE62001E138C39006C9B39 /* Indicator.swift in Sources */,
 				9BFE61DA1E1365DC006C9B39 /* FriendCell.swift in Sources */,
 				9BFE5FBD1E1252DD006C9B39 /* FriendViewController.swift in Sources */,
 				9BFE61F71E138C39006C9B39 /* CacheSerializer.swift in Sources */,
 				9BFE61F51E138C39006C9B39 /* AnimatedImageView.swift in Sources */,
+				9BFE620D1E160D6A006C9B39 /* MoneyCollectionViewCell.swift in Sources */,
 				9BFE61FC1E138C39006C9B39 /* ImagePrefetcher.swift in Sources */,
 				9BFE61F81E138C39006C9B39 /* Filter.swift in Sources */,
 			);
