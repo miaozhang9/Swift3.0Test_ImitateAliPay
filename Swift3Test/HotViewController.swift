@@ -113,7 +113,7 @@ class HotViewController: BaseViewController,UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HotCell", for: indexPath) as! HotCell
-        cell.backgroundColor = UIColor.red
+        cell.backgroundColor = UIColor.orange
         if indexPath.section == 0 {
             cell.label.text = nowClassName[indexPath.item]
             cell.button.addTarget(self, action: #selector(removeItem(_ :)), for: .touchUpInside)
