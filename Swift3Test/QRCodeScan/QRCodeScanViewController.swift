@@ -28,13 +28,14 @@ class QRCodeScanViewController: BaseViewController {
         startAnimation()
         // Do any additional setup after loading the view.
     }
-
+    //加载UI
     private func setUpUI() {
         let rightItem: UIBarButtonItem = UIBarButtonItem(title: "相册", style: .plain, target: self, action: #selector(choosePicFromPhotoLib(sender:)))
         navigationItem.rightBarButtonItem = rightItem
         
         customContainerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth-100, height: kScreenWidth-100))
         customContainerView.center = self.view.center;
+        customContainerView.backgroundColor = UIColor.yellow
         customContainerView.clipsToBounds = true
         view.addSubview(customContainerView)
         
@@ -48,21 +49,25 @@ class QRCodeScanViewController: BaseViewController {
         borderIV.clipsToBounds = true
         view.addSubview(borderIV)
         
+        scanLineView = UIImageView(frame: CGRect(x: 0, y: 0-customContainerView.frame.size
+            .height, width: customContainerView.frame.size.width, height: customContainerView.frame.size.height))
+        scanLineView.image = UIImage(named: "qrcode_scanline_qrcode")
+        borderIV.addSubview(scanLineView)
+        
+        
         customTabbar = UITabBar(frame: CGRect(x: 0, y: (kScreenHeight-kTabBarHeight), width: kScreenWidth, height: 49))
         customTabbar.delegate = self
         customTabbar.backgroundColor = UIColor.red
         customTabbar.barTintColor = UIColor.red
         view.addSubview(customTabbar)
         
+        
         let leftBarItem: UITabBarItem = UITabBarItem(title: "", image: UIImage(named: "qrcode_tabbar_icon_qrcode"), selectedImage: UIImage(named: "qrcode_tabbar_icon_qrcode_highlighted"));
         let rightBarItem: UITabBarItem = UITabBarItem(title: "", image: UIImage(named: "qrcode_tabbar_icon_barcode"), selectedImage: UIImage(named: "qrcode_tabbar_icon_barcode_highlighted"));
         customTabbar.setItems([leftBarItem,rightBarItem], animated: true)
         customTabbar.selectedItem = customTabbar.items?.first
         
-        scanLineView = UIImageView(frame: CGRect(x: 0, y: 0-customContainerView.frame.size
-            .height, width: customContainerView.frame.size.width, height: customContainerView.frame.size.height))
-        scanLineView.image = UIImage(named: "qrcode_scanline_qrcode")
-        borderIV.addSubview(scanLineView)
+       
 
         scanQRCode()
     }
@@ -134,7 +139,7 @@ class QRCodeScanViewController: BaseViewController {
     }
     
     
-    // MARK: -懒加载
+    // MARK: -懒加载  以下方法是判断设备是否可用
     private lazy var input: AVCaptureDeviceInput? = {
     let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         return try? AVCaptureDeviceInput(device: device)
@@ -157,7 +162,6 @@ class QRCodeScanViewController: BaseViewController {
     }()
     
     lazy var containerLayer:CALayer = CALayer()
-    
     /// 预览图层
     lazy var previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
     
@@ -180,7 +184,7 @@ class QRCodeScanViewController: BaseViewController {
 
 }
 
-
+//扩展实现UITabBarDelegate
 extension QRCodeScanViewController: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         // 根据当前选中的按钮重新设置二维码容器高度
@@ -203,7 +207,7 @@ extension QRCodeScanViewController: UITabBarDelegate {
     }
 }
 
-
+//扩展实现UINavigationControllerDelegate, UIImagePickerControllerDelegate
 extension QRCodeScanViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
@@ -241,7 +245,7 @@ extension QRCodeScanViewController: UINavigationControllerDelegate, UIImagePicke
         }
     }
 }
-
+//扩展AVCaptureMetadataOutputObjectsDelegate
 extension QRCodeScanViewController: AVCaptureMetadataOutputObjectsDelegate
 {
     /// 只要扫描到结果就会调用
