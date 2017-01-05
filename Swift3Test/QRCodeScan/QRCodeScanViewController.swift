@@ -35,7 +35,7 @@ class QRCodeScanViewController: BaseViewController {
         
         customContainerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth-100, height: kScreenWidth-100))
         customContainerView.center = self.view.center;
-        customContainerView.backgroundColor = UIColor.yellow
+//        customContainerView.backgroundColor = UIColor.yellow
         customContainerView.clipsToBounds = true
         view.addSubview(customContainerView)
         
@@ -67,8 +67,6 @@ class QRCodeScanViewController: BaseViewController {
         customTabbar.setItems([leftBarItem,rightBarItem], animated: true)
         customTabbar.selectedItem = customTabbar.items?.first
         
-       
-
         scanQRCode()
     }
     
@@ -80,6 +78,7 @@ class QRCodeScanViewController: BaseViewController {
         //2.创建相册控制器
         let imagePickerVC = UIImagePickerController.init()
         imagePickerVC.delegate = self
+        imagePickerVC.allowsEditing = true;
         present(imagePickerVC, animated: true) { 
             print("completion")
         }
@@ -124,7 +123,6 @@ class QRCodeScanViewController: BaseViewController {
     
     func startAnimation()
     {
-    
     //2.执行扫描动画
      UIView.animate(withDuration: 1.5) { () -> Void in
         UIView.setAnimationRepeatCount(MAXFLOAT)
@@ -133,20 +131,20 @@ class QRCodeScanViewController: BaseViewController {
                 scanLineView.frame = CGRect(x: scanLineView.frame.origin.x, y: scanLineView.frame.origin.y+customContainerView.frame.size.height+100, width: scanLineView.frame.size.width, height: scanLineView.frame.size.height)
             }else {
                 scanLineView.frame = CGRect(x:scanLineView.frame.origin.x, y:borderIV.frame.origin.y+borderIV.frame.size.height, width:borderIV.frame.size.width, height:borderIV.frame.size.height)
-            
             }
         }
     }
     
     
-    // MARK: -懒加载  以下方法是判断设备是否可用
+    // MARK: -懒加载
+    //设备输入
     private lazy var input: AVCaptureDeviceInput? = {
     let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         return try? AVCaptureDeviceInput(device: device)
     }()
-    
+    //创建Session
     private lazy var session:AVCaptureSession = AVCaptureSession()
-    
+    //设备输出
     private lazy var output: AVCaptureMetadataOutput = {
         let out = AVCaptureMetadataOutput()
         let viewRect = self.view.frame
@@ -209,7 +207,9 @@ extension QRCodeScanViewController: UITabBarDelegate {
 
 //扩展实现UINavigationControllerDelegate, UIImagePickerControllerDelegate
 extension QRCodeScanViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
         
         // 1.取出选中的图片
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else
@@ -249,24 +249,24 @@ extension QRCodeScanViewController: UINavigationControllerDelegate, UIImagePicke
 extension QRCodeScanViewController: AVCaptureMetadataOutputObjectsDelegate
 {
     /// 只要扫描到结果就会调用
-    private func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!)
     {
         // 1.显示结果
-        
-        print(metadataObjects.last?.stringValue)
-        customLabel.text =  metadataObjects.last?.stringValue
-        
+        scanLineView.layer.removeAllAnimations()
+//        session.stopRunning()
+        //扫完完成
+        if metadataObjects.count > 0
+        {
+            
+            if let resultObj = metadataObjects.first as? AVMetadataMachineReadableCodeObject
+            {
+                customLabel.text =  resultObj.stringValue
+            }
+            
+        }
+    
         clearLayers()
         
-        // 2.拿到扫描到的数据
-        guard let metadata = metadataObjects.last as? AVMetadataObject else
-        {
-            return
-        }
-        // 通过预览图层将corners值转换为我们能识别的类型
-        let objc = previewLayer.transformedMetadataObject(for: metadata)
-        // 2.对扫描到的二维码进行描边
-        drawLines(objc: objc as! AVMetadataMachineReadableCodeObject)
     }
     
     /// 绘制描边
@@ -292,7 +292,7 @@ extension QRCodeScanViewController: AVCaptureMetadataOutputObjectsDelegate
         index+=1
         
         CGPoint(dictionaryRepresentation: (array[index] as! CFDictionary))
-        //        CGPointWithDictionaryRepresentation((array[index++] as! CFDictionary), &point)
+//                CGPointWithDictionaryRepresentation((array[index++] as! CFDictionary), &point)
         
         // 2.1将起点移动到某一个点
         path.move(to: point)

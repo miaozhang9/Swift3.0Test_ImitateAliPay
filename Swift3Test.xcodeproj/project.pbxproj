@@ -1119,6 +1119,7 @@
 				TargetAttributes = {
 					9BBF9D261E124ECB005C76C3 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = MY2CY9936K;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1612,11 +1613,13 @@
 			baseConfigurationReference = 53A07185F7919B3AE943F374 /* Pods-Swift3Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MY2CY9936K;
 				INFOPLIST_FILE = Swift3Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PA.Swift3Test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.yztDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "948858f1-7e75-4df5-9528-4356cc43507f";
+				PROVISIONING_PROFILE_SPECIFIER = Dept_dev_common;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1626,11 +1629,13 @@
 			baseConfigurationReference = 5EA48B6594484C034E80AD66 /* Pods-Swift3Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MY2CY9936K;
 				INFOPLIST_FILE = Swift3Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PA.Swift3Test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.yztDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "948858f1-7e75-4df5-9528-4356cc43507f";
+				PROVISIONING_PROFILE_SPECIFIER = Dept_dev_common;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
