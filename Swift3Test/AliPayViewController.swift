@@ -72,9 +72,9 @@ class AliPayViewController: BaseViewController {
         
         switch imageView.tag {
         case 0:
-            let qrcodeVC:QRCodeScanViewController = QRCodeScanViewController()
+            let qrcodeRootVC:QRCodeRootViewController = QRCodeRootViewController()
             
-            self.navigationController?.pushViewController(qrcodeVC, animated: true)
+            self.navigationController?.pushViewController(qrcodeRootVC, animated: true)
         case 0:
             print("\(sender.view?.tag)")
         case 0:

@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		90F5FE0E034DE71FF2EB1ADC /* Pods_Swift3Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364D86BCBA748DCEB292C9DF /* Pods_Swift3Test.framework */; };
+		9B8A44ED1E1E46BF00836FBF /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44E21E1E46BF00836FBF /* String+QRCode.swift */; };
+		9B8A44EE1E1E46BF00836FBF /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44E31E1E46BF00836FBF /* UIImage+QRCode.swift */; };
+		9B8A44EF1E1E46BF00836FBF /* GenerateQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44E51E1E46BF00836FBF /* GenerateQRCodeViewController.swift */; };
+		9B8A44F01E1E46BF00836FBF /* MyQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44E61E1E46BF00836FBF /* MyQRCodeViewController.swift */; };
+		9B8A44F11E1E46BF00836FBF /* QRCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44E71E1E46BF00836FBF /* QRCodeScanViewController.swift */; };
+		9B8A44F21E1E46BF00836FBF /* RecognizeQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44E81E1E46BF00836FBF /* RecognizeQRCodeViewController.swift */; };
+		9B8A44F41E1E46BF00836FBF /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44EA1E1E46BF00836FBF /* ScanCodeViewController.swift */; };
+		9B8A44F51E1E46BF00836FBF /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44EC1E1E46BF00836FBF /* Tool.swift */; };
+		9B8A44F71E1E4FE400836FBF /* QRCodeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44F61E1E4FE400836FBF /* QRCodeRootViewController.swift */; };
 		9BBF9D2B1E124ECB005C76C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9D2A1E124ECB005C76C3 /* AppDelegate.swift */; };
 		9BBF9D321E124ECB005C76C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9D311E124ECB005C76C3 /* Assets.xcassets */; };
 		9BBF9D351E124ECB005C76C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9D331E124ECB005C76C3 /* LaunchScreen.storyboard */; };
@@ -277,7 +286,6 @@
 		9BFE61CE1E125560006C9B39 /* TabBar_HomeBar_Sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE60CD1E125560006C9B39 /* TabBar_HomeBar_Sel@2x.png */; };
 		9BFE61CF1E125560006C9B39 /* TabBar_HomeBar_Sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE60CE1E125560006C9B39 /* TabBar_HomeBar_Sel@3x.png */; };
 		9BFE61D11E126373006C9B39 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE61D01E126373006C9B39 /* constant.swift */; };
-		9BFE61D41E1268B6006C9B39 /* QRCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE61D31E1268B6006C9B39 /* QRCodeScanViewController.swift */; };
 		9BFE61D71E135D24006C9B39 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE61D61E135D24006C9B39 /* FriendModel.swift */; };
 		9BFE61DA1E1365DC006C9B39 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE61D91E1365DC006C9B39 /* FriendCell.swift */; };
 		9BFE61DC1E136B55006C9B39 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFE61DB1E136B55006C9B39 /* SnapKit.framework */; };
@@ -310,6 +318,15 @@
 		364D86BCBA748DCEB292C9DF /* Pods_Swift3Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift3Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A07185F7919B3AE943F374 /* Pods-Swift3Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3Test/Pods-Swift3Test.debug.xcconfig"; sourceTree = "<group>"; };
 		5EA48B6594484C034E80AD66 /* Pods-Swift3Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3Test/Pods-Swift3Test.release.xcconfig"; sourceTree = "<group>"; };
+		9B8A44E21E1E46BF00836FBF /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
+		9B8A44E31E1E46BF00836FBF /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
+		9B8A44E51E1E46BF00836FBF /* GenerateQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateQRCodeViewController.swift; sourceTree = "<group>"; };
+		9B8A44E61E1E46BF00836FBF /* MyQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQRCodeViewController.swift; sourceTree = "<group>"; };
+		9B8A44E71E1E46BF00836FBF /* QRCodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanViewController.swift; sourceTree = "<group>"; };
+		9B8A44E81E1E46BF00836FBF /* RecognizeQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeQRCodeViewController.swift; sourceTree = "<group>"; };
+		9B8A44EA1E1E46BF00836FBF /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
+		9B8A44EC1E1E46BF00836FBF /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		9B8A44F61E1E4FE400836FBF /* QRCodeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeRootViewController.swift; sourceTree = "<group>"; };
 		9BBF9D271E124ECB005C76C3 /* Swift3Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift3Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBF9D2A1E124ECB005C76C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BBF9D311E124ECB005C76C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -581,7 +598,6 @@
 		9BFE60CD1E125560006C9B39 /* TabBar_HomeBar_Sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar_HomeBar_Sel@2x.png"; sourceTree = "<group>"; };
 		9BFE60CE1E125560006C9B39 /* TabBar_HomeBar_Sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar_HomeBar_Sel@3x.png"; sourceTree = "<group>"; };
 		9BFE61D01E126373006C9B39 /* constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
-		9BFE61D31E1268B6006C9B39 /* QRCodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanViewController.swift; sourceTree = "<group>"; };
 		9BFE61D61E135D24006C9B39 /* FriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		9BFE61D91E1365DC006C9B39 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		9BFE61DB1E136B55006C9B39 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Swift3Test-hhfbjaramucbtlbjclfxpxjawzxl/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
@@ -640,6 +656,44 @@
 				364D86BCBA748DCEB292C9DF /* Pods_Swift3Test.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B8A44E01E1E46BF00836FBF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9B8A44E11E1E46BF00836FBF /* QRCode */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9B8A44E11E1E46BF00836FBF /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				9B8A44E21E1E46BF00836FBF /* String+QRCode.swift */,
+				9B8A44E31E1E46BF00836FBF /* UIImage+QRCode.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		9B8A44E41E1E46BF00836FBF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9B8A44E51E1E46BF00836FBF /* GenerateQRCodeViewController.swift */,
+				9B8A44E61E1E46BF00836FBF /* MyQRCodeViewController.swift */,
+				9B8A44E71E1E46BF00836FBF /* QRCodeScanViewController.swift */,
+				9B8A44E81E1E46BF00836FBF /* RecognizeQRCodeViewController.swift */,
+				9B8A44F61E1E4FE400836FBF /* QRCodeRootViewController.swift */,
+				9B8A44EA1E1E46BF00836FBF /* ScanCodeViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		9B8A44EB1E1E46BF00836FBF /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				9B8A44EC1E1E46BF00836FBF /* Tool.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		9BBF9D1E1E124ECB005C76C3 = {
@@ -1017,7 +1071,9 @@
 		9BFE61D21E126866006C9B39 /* QRCodeScan */ = {
 			isa = PBXGroup;
 			children = (
-				9BFE61D31E1268B6006C9B39 /* QRCodeScanViewController.swift */,
+				9B8A44E01E1E46BF00836FBF /* Extension */,
+				9B8A44E41E1E46BF00836FBF /* Source */,
+				9B8A44EB1E1E46BF00836FBF /* Tool */,
 			);
 			path = QRCodeScan;
 			sourceTree = "<group>";
@@ -1467,7 +1523,10 @@
 				9BFE5FC11E1252FF006C9B39 /* CityListViewController.swift in Sources */,
 				9BFE62081E138C39006C9B39 /* UIButton+Kingfisher.swift in Sources */,
 				9BFE61F91E138C39006C9B39 /* Image.swift in Sources */,
+				9B8A44F21E1E46BF00836FBF /* RecognizeQRCodeViewController.swift in Sources */,
+				9B8A44F11E1E46BF00836FBF /* QRCodeScanViewController.swift in Sources */,
 				9BFE61D71E135D24006C9B39 /* FriendModel.swift in Sources */,
+				9B8A44F71E1E4FE400836FBF /* QRCodeRootViewController.swift in Sources */,
 				9BFE62051E138C39006C9B39 /* Resource.swift in Sources */,
 				9BFE62061E138C39006C9B39 /* String+MD5.swift in Sources */,
 				9BFE62071E138C39006C9B39 /* ThreadHelper.swift in Sources */,
@@ -1475,14 +1534,16 @@
 				9BFE5FB71E125102006C9B39 /* MZTabbarController.swift in Sources */,
 				9BBF9D2B1E124ECB005C76C3 /* AppDelegate.swift in Sources */,
 				9BFE61FB1E138C39006C9B39 /* ImageDownloader.swift in Sources */,
-				9BFE61D41E1268B6006C9B39 /* QRCodeScanViewController.swift in Sources */,
 				9BFE61FF1E138C39006C9B39 /* ImageView+Kingfisher.swift in Sources */,
+				9B8A44F51E1E46BF00836FBF /* Tool.swift in Sources */,
 				9BFE61FE1E138C39006C9B39 /* ImageTransition.swift in Sources */,
+				9B8A44EE1E1E46BF00836FBF /* UIImage+QRCode.swift in Sources */,
 				9BFE5FC61E1254A0006C9B39 /* BaseNavgationController.swift in Sources */,
 				9BFE62111E16389E006C9B39 /* HotCell.swift in Sources */,
 				9BFE62011E138C39006C9B39 /* Kingfisher.swift in Sources */,
 				9BFE5FBF1E1252ED006C9B39 /* MoneyViewController.swift in Sources */,
 				9BFE61FA1E138C39006C9B39 /* ImageCache.swift in Sources */,
+				9B8A44F41E1E46BF00836FBF /* ScanCodeViewController.swift in Sources */,
 				9BFE5FC41E125466006C9B39 /* BaseViewController.swift in Sources */,
 				9BFE62041E138C39006C9B39 /* RequrstModifier.swift in Sources */,
 				9BFE61FD1E138C39006C9B39 /* ImageProcessor.swift in Sources */,
@@ -1492,11 +1553,14 @@
 				9BFE5FBB1E1252BA006C9B39 /* ReputationViewController.swift in Sources */,
 				9BFE620F1E1637E2006C9B39 /* HotViewController.swift in Sources */,
 				9BFE62031E138C39006C9B39 /* KingfisherOptionsInfo.swift in Sources */,
+				9B8A44ED1E1E46BF00836FBF /* String+QRCode.swift in Sources */,
 				9BFE62001E138C39006C9B39 /* Indicator.swift in Sources */,
 				9BFE61DA1E1365DC006C9B39 /* FriendCell.swift in Sources */,
 				9BFE5FBD1E1252DD006C9B39 /* FriendViewController.swift in Sources */,
+				9B8A44EF1E1E46BF00836FBF /* GenerateQRCodeViewController.swift in Sources */,
 				9BFE61F71E138C39006C9B39 /* CacheSerializer.swift in Sources */,
 				9BFE61F51E138C39006C9B39 /* AnimatedImageView.swift in Sources */,
+				9B8A44F01E1E46BF00836FBF /* MyQRCodeViewController.swift in Sources */,
 				9BFE620D1E160D6A006C9B39 /* MoneyCollectionViewCell.swift in Sources */,
 				9BFE61FC1E138C39006C9B39 /* ImagePrefetcher.swift in Sources */,
 				9BFE61F81E138C39006C9B39 /* Filter.swift in Sources */,
