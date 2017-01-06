@@ -1,5 +1,5 @@
 //
-//  QRCodeScanViewController.swift
+//  ScanCodeViewController.swift
 //  Swift3Test
 //
 //  Created by Miaoz on 17/1/5.
@@ -11,7 +11,7 @@ import AVFoundation
 
 private let scanAnimationDuration = 3.0//扫描时长
 
-class ScanCodeViewController: UIViewController
+class ScanCodeViewController: BaseViewController
 {
     
     //MARK: -
@@ -56,6 +56,14 @@ class ScanCodeViewController: UIViewController
     {
         
         super.viewDidLoad()
+       
+        initSubViews()
+        setupScanSession()
+        
+    }
+    
+    private func initSubViews() {
+    
         let label: UILabel = UILabel.init()
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 13)
@@ -84,11 +92,9 @@ class ScanCodeViewController: UIViewController
         initBottomView()
         view.layoutIfNeeded()
         scanPane.addSubview(scanLine)
-        
-        setupScanSession()
-        
-    }
     
+    
+    }
     private func initBottomView() {
         bottomView = {
             let tempbottomView = UIView.init(frame: CGRect(x: 0, y: kScreenHeight-kNavbarHeight-20, width: kScreenWidth, height: 2 * kNavbarHeight))
@@ -102,34 +108,29 @@ class ScanCodeViewController: UIViewController
             let imageView = UIImageView.init()
             imageView.tintColor = UIColor.white
             imageView.isUserInteractionEnabled = true
-            imageView.frame = CGRect(x: imageViewWidth * CGFloat(index), y: 0, width: imageViewWidth, height: ((bottomView?.frame.size.height)!/2))
-            
-            let titleLabel = UILabel.init(frame: CGRect(x: imageView.frame.origin.x, y: imageView.frame.origin.y+(bottomView?.frame.size.height)!*2/3/2, width: imageViewWidth, height: 30))
-            
-            
+            imageView.frame = CGRect(x: imageViewWidth * CGFloat(index), y: 10, width: imageViewWidth, height: ((bottomView?.frame.size.height)!/2))
+
             if index == 0 {
-                imageView.image = UIImage.init(named: "scan")
-                titleLabel.text = "相册"
+                imageView.image = UIImage.init(named: "qrcode_scan_btn_photo_nor")
+               
             } else if index == 1 {
-                imageView.image = UIImage.init(named: "scanStatic")
-                titleLabel.text = "开灯"
+                imageView.image = UIImage.init(named: "qrcode_scan_btn_flash_nor")
+              
             }else if index == 2 {
-                imageView.image = UIImage.init(named: "scan")
-                titleLabel.text = "我的二维码"
+                imageView.image = UIImage.init(named: "qrcode_scan_btn_myqrcode_nor")
+                
             }
-            
-            titleLabel.textAlignment = .center
-            titleLabel.textColor = UIColor.white
-           
+          
             imageView.contentMode = .center;
             
             let button: UIButton = UIButton.init()
-            button.backgroundColor = UIColor.red
+            button.frame = CGRect(x: 0, y: 0, width: imageViewWidth, height: imageView.frame.size.height)
+            button.backgroundColor = UIColor.clear
             button.addTarget(self, action: #selector(bottomBtnClick(sender:)), for: .touchUpInside)
             button.tag = index
             imageView.addSubview(button)
             bottomView?.addSubview(imageView)
-            bottomView?.addSubview(titleLabel)
+        
         }
     }
     override func viewWillAppear(_ animated: Bool)
@@ -216,14 +217,14 @@ class ScanCodeViewController: UIViewController
         
         switch sender.tag {
         case 0:
-          photo()
+             photo()
         case 1:
              light(sender)
         case 2:
             
             let vc2:MyQRCodeViewController = MyQRCodeViewController()
             
-            self.navigationController?.pushViewController(vc2, animated: true)
+            self.navigationController?.pushViewController(vc2, animated: false)
        
         default:
             print("\(sender.tag)")

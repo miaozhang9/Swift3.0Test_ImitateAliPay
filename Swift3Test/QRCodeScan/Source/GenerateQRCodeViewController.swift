@@ -1,5 +1,5 @@
 //
-//  QRCodeScanViewController.swift
+//  GenerateQRCodeViewController.swift
 //  Swift3Test
 //
 //  Created by Miaoz on 17/1/5.
@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class GenerateQRCodeViewController: UIViewController
 {
@@ -14,9 +15,9 @@ class GenerateQRCodeViewController: UIViewController
     //MARK: -
     //MARK: Global Variables
     
-    @IBOutlet private weak var contentLab: UITextField!
-    @IBOutlet private weak var logoImageView: UIImageView!
-    @IBOutlet private weak var QRCodeImageView: UIImageView!
+    var contentLab: UITextField!
+    var logoImageView: UIImageView!
+    var QRCodeImageView: UIImageView!
     
     //MARK: -
     //MARK: Lazy Components
@@ -37,6 +38,7 @@ class GenerateQRCodeViewController: UIViewController
     {
         super.viewDidLoad()
         
+        initSubViews()
         setupComponents()
         
     }
@@ -44,6 +46,54 @@ class GenerateQRCodeViewController: UIViewController
     
     //MARK: -
     //MARK: Interface Components
+    private func initSubViews() {
+        contentLab = UITextField.init()
+        contentLab.placeholder = "请输入要生成二维码的文字"
+        contentLab.borderStyle = .roundedRect
+        self.view.addSubview(contentLab)
+        contentLab.snp.makeConstraints { (make) in
+            make.top.equalTo(100)
+            make.centerX.equalTo(self.view.snp.centerX)
+        }
+        
+        let lable: UILabel = UILabel.init()
+        lable.text = "请选择logo:"
+        lable.font = UIFont.systemFont(ofSize: 13)
+        self.view.addSubview(lable)
+        lable.snp.makeConstraints { (make) in
+            make.left.equalTo(contentLab.snp.left)
+            make.top.equalTo(contentLab.snp.bottom).offset(20)
+        }
+        
+        logoImageView = UIImageView.init(image: UIImage.init(named: "8_150709170804_8"))
+        self.view.addSubview(logoImageView)
+        logoImageView.snp.makeConstraints { (make) in
+            make.left.equalTo(lable.snp.right).offset(20)
+            make.top.equalTo(lable.snp.top)
+            make.size.equalTo(CGSize(width: 60, height: 60))
+        }
+        
+        let lable2: UILabel = UILabel.init()
+        lable2.text = "二维码"
+        lable2.font = UIFont.systemFont(ofSize: 13)
+        self.view.addSubview(lable2)
+        lable2.snp.makeConstraints { (make) in
+            make.left.equalTo(lable.snp.left)
+            make.top.equalTo(lable.snp.bottom).offset(50)
+        }
+        
+        QRCodeImageView = UIImageView.init(image: UIImage.init(named: "8_150709170804_8"))
+        self.view.addSubview(QRCodeImageView)
+        QRCodeImageView.snp.makeConstraints { (make) in
+            make.left.equalTo(lable.snp.left)
+            make.top.equalTo(lable2.snp.bottom)
+            make.size.equalTo(CGSize(width: 232, height: 232))
+        }
+    
+    }
+    
+    
+    
     
     private func setupComponents()
     {

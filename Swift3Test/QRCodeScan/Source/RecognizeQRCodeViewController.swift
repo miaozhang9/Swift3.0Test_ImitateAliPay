@@ -1,5 +1,5 @@
 //
-//  QRCodeScanViewController.swift
+//  RecognizeQRCodeViewController.swift
 //  Swift3Test
 //
 //  Created by Miaoz on 17/1/5.
@@ -16,10 +16,6 @@ class RecognizeQRCodeViewController: BaseViewController
     //MARK: Global Variables
     
     var sourceImage : UIImage?
-    
-//    @IBOutlet private weak var sourceImageView: UIImageView!
-//    
-//    @IBOutlet private weak var activityIndicatoryView: UIActivityIndicatorView!
     var sourceImageView: UIImageView!
     var activityIndicatoryView: UIActivityIndicatorView!
     //MARK: -
@@ -40,7 +36,18 @@ class RecognizeQRCodeViewController: BaseViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    
+        initSubViews()
+        setupImage()
         
+        setupGes()
+        
+    }
+    
+    
+    //MARK: -
+    //MARK: Interface Components
+    private func initSubViews() {
         sourceImageView = UIImageView()
         self.view.addSubview(sourceImageView)
         sourceImageView!.snp.makeConstraints { (make) in
@@ -53,17 +60,7 @@ class RecognizeQRCodeViewController: BaseViewController
         activityIndicatoryView!.snp.makeConstraints { (make) in
             make.center.equalTo(self.view.snp.center)
         }
-        
-        setupImage()
-        
-        setupGes()
-        
     }
-    
-    
-    //MARK: -
-    //MARK: Interface Components
-    
     private func setupGes()
     {
         

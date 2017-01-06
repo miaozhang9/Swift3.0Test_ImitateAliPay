@@ -1,5 +1,5 @@
 //
-//  QRCodeScanViewController.swift
+//  MyQRCodeViewController.swift
 //  Swift3Test
 //
 //  Created by Miaoz on 17/1/5.
@@ -35,24 +35,27 @@ class MyQRCodeViewController: UIViewController
         
         super.viewDidLoad()
         
-        myQRCode = UIImageView.init()
-        self.view.addSubview(myQRCode)
-        myQRCode!.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.snp.top).offset(80)
-            make.left.equalTo(self.view.snp.left).offset(20)
-            make.size.equalTo(CGSize(width: 280, height: 280))
-        }
-        
-        
-        
-        myQRCode.image = "https://github.com/fuaiyi/QRCode.git".generateQRCodeWithLogo(logo: UIImage(named: "8_150709170804_8"))
+        initSubViews()
+        myQRCode.image = "https://github.com/miaozhang9/Swift3.0Test_ImitateAliPay.git".generateQRCodeWithLogo(logo: UIImage(named: "8_150709170804_8"))
         
     }
     
     
     //MARK: -
     //MARK: Interface Components
+    private func initSubViews() {
     
+        myQRCode = UIImageView.init()
+        self.view.addSubview(myQRCode)
+        myQRCode!.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.snp.top).offset(80)
+            make.left.equalTo(self.view.snp.left).offset(50)
+            make.right.equalTo(self.view.snp.right).offset(-50)
+            make.height.equalTo(280)
+        }
+
+    
+    }
     
     //MARK: -
     //MARK: Target Action
