@@ -75,12 +75,14 @@ class AliPayViewController: BaseViewController {
             let qrcodeRootVC:QRCodeRootViewController = QRCodeRootViewController()
             
             self.navigationController?.pushViewController(qrcodeRootVC, animated: true)
-        case 0:
+        case 1:
             print("\(sender.view?.tag)")
-        case 0:
+        case 2:
             print("\(sender.view?.tag)")
-        case 0:
-            print("\(sender.view?.tag)")
+        case 3:
+            let vc3:NearViewController = NearViewController()
+            self.navigationController?.pushViewController(vc3, animated: true)
+           
         default:
             print("\(sender.view?.tag)")
             

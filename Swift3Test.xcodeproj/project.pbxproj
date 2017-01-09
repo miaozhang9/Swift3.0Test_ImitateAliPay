@@ -17,6 +17,9 @@
 		9B8A44F41E1E46BF00836FBF /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44EA1E1E46BF00836FBF /* ScanCodeViewController.swift */; };
 		9B8A44F51E1E46BF00836FBF /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44EC1E1E46BF00836FBF /* Tool.swift */; };
 		9B8A44F71E1E4FE400836FBF /* QRCodeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44F61E1E4FE400836FBF /* QRCodeRootViewController.swift */; };
+		9B8A44F91E236A4A00836FBF /* NearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44F81E236A4A00836FBF /* NearViewController.swift */; };
+		9B8A44FB1E236B0600836FBF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A44FA1E236B0600836FBF /* MapKit.framework */; };
+		9B8A44FD1E236B1200836FBF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A44FC1E236B1200836FBF /* CoreLocation.framework */; };
 		9BBF9D2B1E124ECB005C76C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9D2A1E124ECB005C76C3 /* AppDelegate.swift */; };
 		9BBF9D321E124ECB005C76C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9D311E124ECB005C76C3 /* Assets.xcassets */; };
 		9BBF9D351E124ECB005C76C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9D331E124ECB005C76C3 /* LaunchScreen.storyboard */; };
@@ -327,6 +330,9 @@
 		9B8A44EA1E1E46BF00836FBF /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		9B8A44EC1E1E46BF00836FBF /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		9B8A44F61E1E4FE400836FBF /* QRCodeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeRootViewController.swift; sourceTree = "<group>"; };
+		9B8A44F81E236A4A00836FBF /* NearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearViewController.swift; sourceTree = "<group>"; };
+		9B8A44FA1E236B0600836FBF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9B8A44FC1E236B1200836FBF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9BBF9D271E124ECB005C76C3 /* Swift3Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift3Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBF9D2A1E124ECB005C76C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BBF9D311E124ECB005C76C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -632,6 +638,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8A44FD1E236B1200836FBF /* CoreLocation.framework in Frameworks */,
+				9B8A44FB1E236B0600836FBF /* MapKit.framework in Frameworks */,
 				9BFE61DC1E136B55006C9B39 /* SnapKit.framework in Frameworks */,
 				90F5FE0E034DE71FF2EB1ADC /* Pods_Swift3Test.framework in Frameworks */,
 			);
@@ -652,6 +660,8 @@
 		17A7B6A82045888E00565D7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B8A44FC1E236B1200836FBF /* CoreLocation.framework */,
+				9B8A44FA1E236B0600836FBF /* MapKit.framework */,
 				9BFE61DB1E136B55006C9B39 /* SnapKit.framework */,
 				364D86BCBA748DCEB292C9DF /* Pods_Swift3Test.framework */,
 			);
@@ -724,6 +734,7 @@
 				9BFE5FBE1E1252ED006C9B39 /* MoneyViewController.swift */,
 				9BFE5FC01E1252FF006C9B39 /* CityListViewController.swift */,
 				9BFE620E1E1637E2006C9B39 /* HotViewController.swift */,
+				9B8A44F81E236A4A00836FBF /* NearViewController.swift */,
 				9BFE61DD1E138C39006C9B39 /* ThirdLib */,
 				9BFE61D81E1365AF006C9B39 /* Cell */,
 				9BFE61D51E135D0A006C9B39 /* Model */,
@@ -1522,6 +1533,7 @@
 			files = (
 				9BFE5FC11E1252FF006C9B39 /* CityListViewController.swift in Sources */,
 				9BFE62081E138C39006C9B39 /* UIButton+Kingfisher.swift in Sources */,
+				9B8A44F91E236A4A00836FBF /* NearViewController.swift in Sources */,
 				9BFE61F91E138C39006C9B39 /* Image.swift in Sources */,
 				9B8A44F21E1E46BF00836FBF /* RecognizeQRCodeViewController.swift in Sources */,
 				9B8A44F11E1E46BF00836FBF /* QRCodeScanViewController.swift in Sources */,
