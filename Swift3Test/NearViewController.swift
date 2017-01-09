@@ -47,11 +47,11 @@ class NearViewController: BaseViewController, MKMapViewDelegate, CLLocationManag
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             // 2. region data
             let title = "Lorrenzillo' s"
-            let coordinate = CLLocationCoordinate2DMake(31.703026, 121.759735)
+            let coordinate = CLLocationCoordinate2DMake(31.18467660, 121.45164569)
             let regionRadius = 300.0
             
             // 3. setup region
-            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,longitude: coordinate.longitude), radius: regionRadius, identifier: title)
+//            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,longitude: coordinate.longitude), radius: regionRadius, identifier: title)
             
             // 4. setup annotation
             let restaurantAnnotation = MKPointAnnotation()
@@ -67,14 +67,18 @@ class NearViewController: BaseViewController, MKMapViewDelegate, CLLocationManag
             print("System can't track regions")
         }
         
-        // 6. draw circle
-        func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-            let circleRenderer = MKCircleRenderer(overlay: overlay)
-            circleRenderer.strokeColor = UIColor.red
-            circleRenderer.lineWidth = 1.0
-            return circleRenderer
-        }
+ }
+    
+    // 6. draw circle
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    
+        let circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.strokeColor = UIColor.red
+        circleRenderer.lineWidth = 1.0
+        return circleRenderer
     }
+    
+
     var monitoredRegions: Dictionary<String, NSDate> = [:]
     
     // 1. user enter region
