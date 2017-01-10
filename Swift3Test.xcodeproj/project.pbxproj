@@ -20,6 +20,7 @@
 		9B8A44F91E236A4A00836FBF /* NearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A44F81E236A4A00836FBF /* NearViewController.swift */; };
 		9B8A44FB1E236B0600836FBF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A44FA1E236B0600836FBF /* MapKit.framework */; };
 		9B8A44FD1E236B1200836FBF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A44FC1E236B1200836FBF /* CoreLocation.framework */; };
+		9B8A44FF1E24D0DA00836FBF /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B8A44FE1E24D0DA00836FBF /* citydict.plist */; };
 		9BBF9D2B1E124ECB005C76C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9D2A1E124ECB005C76C3 /* AppDelegate.swift */; };
 		9BBF9D321E124ECB005C76C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9D311E124ECB005C76C3 /* Assets.xcassets */; };
 		9BBF9D351E124ECB005C76C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9D331E124ECB005C76C3 /* LaunchScreen.storyboard */; };
@@ -333,6 +334,7 @@
 		9B8A44F81E236A4A00836FBF /* NearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearViewController.swift; sourceTree = "<group>"; };
 		9B8A44FA1E236B0600836FBF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9B8A44FC1E236B1200836FBF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9B8A44FE1E24D0DA00836FBF /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
 		9BBF9D271E124ECB005C76C3 /* Swift3Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift3Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBF9D2A1E124ECB005C76C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BBF9D311E124ECB005C76C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -746,6 +748,7 @@
 				9BBF9D331E124ECB005C76C3 /* LaunchScreen.storyboard */,
 				9BBF9D361E124ECB005C76C3 /* Info.plist */,
 				9BFE61D01E126373006C9B39 /* constant.swift */,
+				9B8A44FE1E24D0DA00836FBF /* citydict.plist */,
 			);
 			path = Swift3Test;
 			sourceTree = "<group>";
@@ -1339,6 +1342,7 @@
 				9BBF9D321E124ECB005C76C3 /* Assets.xcassets in Resources */,
 				9BFE61491E125560006C9B39 /* codeframe@2x.png in Resources */,
 				9BFE616B1E125560006C9B39 /* brand@2x.png in Resources */,
+				9B8A44FF1E24D0DA00836FBF /* citydict.plist in Resources */,
 				9BFE618D1E125560006C9B39 /* O2O-WIFI@2x.png in Resources */,
 				9BFE613E1E125560006C9B39 /* 20000778@2x.png in Resources */,
 				9BFE61241E125560006C9B39 /* 20000221_contactA@2x.png in Resources */,
