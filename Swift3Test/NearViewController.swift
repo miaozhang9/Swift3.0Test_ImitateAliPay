@@ -16,15 +16,16 @@ class NearViewController: BaseViewController, MKMapViewDelegate, CLLocationManag
     //1. create locationManager
     let locationManager = CLLocationManager()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "我的位置"
+        //2.1 地图init
         mapView = MKMapView.init()
         self.view.addSubview(mapView!)
         mapView?.snp.makeConstraints({ (make) in
             make.edges.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         })
+        
         
         // 2. setup locationManager
         locationManager.delegate = self
@@ -77,7 +78,6 @@ class NearViewController: BaseViewController, MKMapViewDelegate, CLLocationManag
         circleRenderer.lineWidth = 1.0
         return circleRenderer
     }
-    
 
     var monitoredRegions: Dictionary<String, NSDate> = [:]
     
@@ -97,8 +97,42 @@ class NearViewController: BaseViewController, MKMapViewDelegate, CLLocationManag
     
     // 3. Update resions logic
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        updateRegions()
+//        updateRegions()
+        let currLocation: CLLocation!
+        currLocation = locations.last! as CLLocation
+        self.reverseGeocode(sender: currLocation, currLocation:currLocation)
     }
+    //解析编译地理位置
+    func reverseGeocode(sender: AnyObject, currLocation:CLLocation) {
+        let geocoder = CLGeocoder()
+        var p:CLPlacemark?
+        geocoder.reverseGeocodeLocation(currLocation, completionHandler: { (placemarks, error) -> Void in
+            if error != nil {
+                print("reverse geodcode fail: \(error!.localizedDescription)")
+                return
+            }
+            let pm = placemarks! as [CLPlacemark]
+            if (pm.count > 0){
+                p = placemarks![0]
+                //                let arrayforProvince:Array = (p?.name!.componentsSeparatedByString("省"))!
+                
+                
+                guard p != nil
+                    else {
+                        return
+                }
+                let arrayforProvince:[String] = (p!.name?.components(separatedBy:"省"))!
+                let city:String = arrayforProvince.last!
+                let  arrayforcity:[String] = (city.components(separatedBy:("市")))
+                self.title = arrayforcity.first;
+            }else{
+                print("No Placemarks!")
+            }
+        })
+    }
+    
+    
+
     
     func updateRegions() {
         // 1.
