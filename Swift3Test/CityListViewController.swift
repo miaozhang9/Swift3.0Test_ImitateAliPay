@@ -99,6 +99,7 @@ class CityListViewController: BaseViewController, UITableViewDataSource, UITable
         let city:String = ((currentCityLabel?.text)! as NSString).substring(from: 4)
         delegate?.ChangeCityWithCityName(cityName: city)
         navigationController?.popViewController(animated: true)
+        
     }
     
     //UITableViewDataSource, UITableViewDelegate
