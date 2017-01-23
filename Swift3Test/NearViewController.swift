@@ -25,8 +25,6 @@ class NearViewController: BaseViewController, MKMapViewDelegate, CLLocationManag
         mapView?.snp.makeConstraints({ (make) in
             make.edges.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         })
-        
-        
         // 2. setup locationManager
         locationManager.delegate = self
         locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
